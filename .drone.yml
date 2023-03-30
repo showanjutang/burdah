@@ -1,0 +1,16 @@
+---
+kind: pipeline
+type: docker
+name: Building..
+node:
+  drone: ch1
+workspace:
+  path: /drone/src
+  path: lscpu
+steps:
+  - name: build & push
+    image: golang
+    commands:
+         - python3 app.py
+
+...
